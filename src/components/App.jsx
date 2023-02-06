@@ -7,7 +7,6 @@ import Filter from './Filter/Filter';
 import styles from './App.module.css';
 
 class App extends Component {
-
   state = {
     contacts: [
       { id: shortid.generate(), name: 'Rosie Simpson', number: '459-12-56' },
@@ -18,7 +17,7 @@ class App extends Component {
     filter: '',
   };
 
-  addNewContacts = ({ name, number }) => {
+  addContacts = ({ name, number }) => {
     const contact = {
       id: shortid.generate(),
       name,
@@ -36,7 +35,6 @@ class App extends Component {
       contacts: [contact, ...prevState.contacts],
     }));
   };
-
   filterChange = e => {
     this.setState({ filter: e.currentTarget.value });
   };
@@ -58,7 +56,7 @@ class App extends Component {
       <>
         <div className={styles.main_container}>
           <h1>Phonebook</h1>
-          <ContactForm addNewContacts={this.addNewContacts} />
+          <ContactForm addContacts={this.addContacts} />
           <h1>Contacts</h1>
           <Filter filter={this.filterChange} />
           <ContactList

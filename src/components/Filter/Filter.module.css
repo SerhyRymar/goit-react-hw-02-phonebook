@@ -1,0 +1,28 @@
+.filter_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: 500px;
+
+  background-color: #4f4f4f
+}
+
+.contact_text {
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  font-weight: bold;  
+  color: #fff;
+}
+
+.input {
+  margin-bottom: 20px;
+  width:  200px;
+  height: 15px;
+  padding: 5px 10px 5px 10px;
+  border:1px solid #999;
+  font-size:16px;
+  font-family: Tahoma;
+}
