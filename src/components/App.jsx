@@ -22,7 +22,7 @@ class App extends Component {
       id: shortid.generate(),
       name,
       number,
-    };
+    };  
 
     if (
       this.state.contacts.find(item => {
