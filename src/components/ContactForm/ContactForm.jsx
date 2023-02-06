@@ -9,8 +9,8 @@ class ContactForm extends Component {
     number: '',
   };
 
-  formChange = event => {
-    this.setState({ [event.currentTarget.name]: event.currentTarget.value });
+  formChange = e => {
+    this.setState({ [e.currentTarget.name]: e.currentTarget.value });
   };
 
   formSubmit = e => {
