@@ -3,7 +3,6 @@ import styles from './ContactForm.module.css';
 
 
 class ContactForm extends Component {
-
   state = {
     name: '',
     number: '',
@@ -22,7 +21,7 @@ class ContactForm extends Component {
   render() {
     return (
       <div className={styles.container}>
-        <form>
+        <form onSubmit={this.formSubmit}>
           <p className={styles.title}>Name</p>
           <input
             className={styles.input}

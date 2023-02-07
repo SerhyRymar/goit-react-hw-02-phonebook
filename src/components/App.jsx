@@ -35,6 +35,7 @@ class App extends Component {
       contacts: [contact, ...prevState.contacts],
     }));
   };
+  
   filterChange = e => {
     this.setState({ filter: e.currentTarget.value });
   };
