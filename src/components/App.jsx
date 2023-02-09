@@ -22,11 +22,11 @@ class App extends Component {
       id: shortid.generate(),
       name,
       number,
-    };  
+    };
 
     if (
       this.state.contacts.find(item => {
-        return item.name === contact.name;
+        return item.name.toLowerCase() === contact.name.toLowerCase();
       })
     ) {
       return alert(`${contact.name} is already in contacts`);
@@ -35,9 +35,17 @@ class App extends Component {
       contacts: [contact, ...prevState.contacts],
     }));
   };
-  
+
   filterChange = e => {
     this.setState({ filter: e.currentTarget.value });
+  };
+
+  filterContacts = () => {
+    const { filter, contacts } = this.state;
+
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(filter.toLowerCase())
+    );
   };
 
   deleteContact = contactId => {
@@ -47,11 +55,7 @@ class App extends Component {
   };
 
   render() {
-    const filterContact = this.state.contacts.filter(contact => {
-      return contact.name
-        .toLowerCase()
-        .includes(this.state.filter.toLowerCase());
-    });
+    const filterContact = this.filterContacts();
 
     return (
       <>
